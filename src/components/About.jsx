@@ -7,7 +7,7 @@ function About() {
       <div className="section-inner about-inner">
          <div className="section-header">
             <p className="eyebrow">Profile</p>
-            <h2>I am</h2>
+            <h2>About</h2>
          </div>
 
          <div className="about-layout">
@@ -18,23 +18,28 @@ function About() {
             </div>
 
             <div className="about-card">
-               <h3>소리 없이, 완벽하게.</h3>
-               <p className="about-sub">팀 안에서 조용히 흐름을 읽고, 사용자의 관점으로 납득이 될 때까지 화면을 다듬습니다.</p>
+               <h3>조용히, 하지만 결과는 명확하게.</h3>
+
+               <p className="about-sub">React 기반 UI를 컴포넌트 구조로 나누고, 상태/라우팅 흐름을 정리해서 구현한다.</p>
+
                <p className="about-body">
-                  심미안&가독성을 중요하게 생각합니다. 마크업, 레이아웃, 상태 흐름이 정리되어 있어야 안심합니다.
+                  단순히 예쁜 화면보다 <b>유지보수 가능한 구조</b>를 더 중요하게 본다.
                   <br />
-                  디자인과 개발 사이에 있는 애매한 부분을 직접 정의하고 구현하는 것을 좋아합니다.
+                  마크업/레이아웃/상태 흐름이 정리되어야 안정감을 느끼고, 그 기준으로 UI를 다듬는다.
+                  <br />
+                  디자인과 개발 사이의 애매한 지점(간격, 타이포, 인터랙션)을 정의해서 완성도를 올리는 걸 좋아한다.
                </p>
 
                <div className="about-badges">
-                  <span>Deep focus</span>
+                  <span>Component Thinking</span>
                   <span>Ownership</span>
                   <span>Pixel + Code</span>
                </div>
 
                <div className="about-notes">
-                  <p># 팀 프로젝트 Play Farm에서 UI 흐름과 퍼블리싱 리딩</p>
-                  <p># Figma 없이도 레이아웃을 코드로 설계 가능</p>
+                  <p># 팀 프로젝트 Play Farm: 사용자/관리자 UI 흐름 설계 및 구현 경험</p>
+                  <p># 토큰 기반 CSS로 스타일 일관성 유지</p>
+                  <p># GitHub Pages 배포 및 설정 트러블슈팅 경험</p>
                </div>
             </div>
          </div>

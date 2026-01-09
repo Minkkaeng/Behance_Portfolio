@@ -517,6 +517,29 @@
    border: 1px solid var(--border-subtle);
    background: var(--surface-soft);
 }
+.project-modal-block {
+   margin-top: 12px;
+}
+
+.project-modal-subtitle {
+   margin: 0 0 6px;
+   font-size: 11px;
+   letter-spacing: 0.16em;
+   text-transform: uppercase;
+   color: var(--text-sub);
+}
+
+.project-modal-list {
+   margin: 0;
+   padding-left: 18px;
+   color: var(--text-sub);
+   font-size: 13px;
+   line-height: 1.65;
+}
+
+.project-modal-list li {
+   margin: 4px 0;
+}
 
 /* 메인 화면 작은 썸네일 */
 
