@@ -1,3 +1,4 @@
+// src/App.jsx
 import { useEffect, useState } from 'react';
 import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
@@ -20,9 +21,7 @@ function App() {
       window.localStorage.setItem('mk-theme', theme);
    }, [theme]);
 
-   const toggleTheme = () => {
-      setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
-   };
+   const toggleTheme = () => setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
 
    return (
       <>

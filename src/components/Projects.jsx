@@ -1,4 +1,3 @@
-// src/components/Projects.jsx
 import { useState } from 'react';
 import { getImagePath } from '../utils/imagePath';
 
@@ -7,7 +6,7 @@ const projects = [
       id: 2,
       label: '01 · Play Farm',
       role: '팀 프로젝트 · Frontend 중심 (React / Node / MySQL)',
-      period: '2025.XX ~ 2025.XX (팀)',
+      period: '2025.12 ~ 2026.01 (팀)',
       title: '농장 체험 예약 플랫폼',
       summary: '농장 체험을 검색·필터·예약까지 연결하는 서비스. 사용자/관리자 화면 흐름을 기준으로 UI 구조를 설계하고 구현했습니다.',
       tech: ['React', 'React Router', 'Node.js', 'Express', 'MySQL'],
@@ -16,13 +15,12 @@ const projects = [
       live: '#',
       repo: '#',
       logo: '/img/projects/Playfarm.png',
-      thumbnail: '/img/projects/Playfarm-main.png',
    },
    {
       id: 4,
       label: '02 · Planify',
       role: '개인 프로젝트 · React',
-      period: '2025.XX',
+      period: '2025.12',
       title: '하루를 정리하는 Productivity 플래너',
       summary: '할 일/캘린더/설정을 한 흐름으로 묶어 사용성을 높인 플래너. 로컬스토리지 기반으로 데이터를 유지하도록 설계했습니다.',
       tech: ['React', 'Vite', 'LocalStorage'],
@@ -31,22 +29,20 @@ const projects = [
       live: '#',
       repo: '#',
       logo: '/img/projects/Planify.png',
-      thumbnail: '/img/projects/planify-main.png',
    },
    {
       id: 3,
       label: '03 · Airbnb Renewal',
       role: '개인 프로젝트 · React',
-      period: '2025.XX',
+      period: '2025.10',
       title: '숙소 검색 UX 리디자인',
-      summary: '검색 흐름과 카드 UI를 재구성해 React로 구현했습니다. 필터/모달 등 인터랙션 중심 UI를 구성했습니다.',
+      summary: '검색 흐름과 카드 UI를 재구성해 React로 구현했습니다. 필터/모달 등 인터랙션 중심 UI를 구성을 연습했습니다.',
       tech: ['React', 'React Router'],
       highlights: ['카테고리/필터 UI 패턴 구현', '모달/오버레이 인터랙션 처리', '반응형 카드 그리드 레이아웃 구성'],
       tags: ['Modal', 'Filter UX', 'Responsive'],
       live: 'https://minkkaeng.github.io/portfolio_AirBnB/',
       repo: '#',
       logo: '/img/projects/Airbnb.png',
-      thumbnail: '/img/projects/airbnb-main.png',
    },
    {
       id: 1,
@@ -54,14 +50,13 @@ const projects = [
       role: '개인 프로젝트 · HTML / CSS / JS',
       period: '2025.XX',
       title: '감성 인테리어 쇼핑몰 웹사이트',
-      summary: '톤앤매너를 설정하고 반복 UI 컴포넌트(카드/배너/버튼) 기준으로 페이지를 퍼블리싱했습니다.',
+      summary: '톤앤매너를 설정하고 반복 UI 컴포넌트(카드/배너/버튼) 기준으로 페이지를 퍼블리싱을 연습했습니다.',
       tech: ['HTML', 'CSS', 'JavaScript'],
       highlights: ['토큰 기반 컬러 시스템으로 일관성 유지', '메인/카테고리/상세/기획전 페이지 구성', '카드/배너 컴포넌트 재사용 구조 설계'],
       tags: ['Token CSS', 'Publishing', 'Components'],
       live: 'https://minkkaeng.github.io/The-GamSung/',
       repo: '#',
       logo: '/img/projects/TheGamSung.png',
-      thumbnail: '/img/projects/gamsung-main.png',
    },
 ];
 
@@ -110,7 +105,6 @@ function Projects() {
 
                      <p className="project-modal-summary">{activeProject.summary}</p>
 
-                     {/* ✅ Tech stack */}
                      <div className="project-modal-block">
                         <p className="project-modal-subtitle">Tech Stack</p>
                         <ul className="project-modal-tags">
@@ -120,7 +114,6 @@ function Projects() {
                         </ul>
                      </div>
 
-                     {/* ✅ Highlights */}
                      <div className="project-modal-block">
                         <p className="project-modal-subtitle">Highlights</p>
                         <ul className="project-modal-list">
@@ -128,10 +121,6 @@ function Projects() {
                               <li key={h}>{h}</li>
                            ))}
                         </ul>
-                     </div>
-
-                     <div className="project-modal-thumb-small-wrap">
-                        <img src={getImagePath(activeProject.thumbnail)} alt={`${activeProject.title} 메인 화면`} className="project-modal-thumb-small" />
                      </div>
 
                      <div className="project-modal-actions">

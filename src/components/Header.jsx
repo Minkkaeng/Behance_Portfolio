@@ -4,10 +4,8 @@ function Header({ theme, onToggleTheme }) {
    const [scrolled, setScrolled] = useState(false);
 
    useEffect(() => {
-      const onScroll = () => {
-         setScrolled(window.scrollY > 24);
-      };
-      window.addEventListener('scroll', onScroll);
+      const onScroll = () => setScrolled(window.scrollY > 24);
+      window.addEventListener('scroll', onScroll, { passive: true });
       return () => window.removeEventListener('scroll', onScroll);
    }, []);
 
@@ -20,11 +18,11 @@ function Header({ theme, onToggleTheme }) {
    return (
       <header id="navbar" className={scrolled ? 'navbar scrolled' : 'navbar'}>
          <div className="nav-container">
-            <div className="logo" onClick={() => handleNavClick('hero')}>
+            <button type="button" className="brand" onClick={() => handleNavClick('hero')} aria-label="Go to Home">
                Min Kyoung · Portfolio
-            </div>
+            </button>
 
-            <nav className="nav-links">
+            <nav className="nav-links" aria-label="Primary">
                <button type="button" onClick={() => handleNavClick('hero')}>
                   Home
                </button>

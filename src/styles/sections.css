@@ -1,5 +1,6 @@
-/* ============= HERO ============= */
+/* src/styles/sections.css */
 
+/* ============= HERO ============= */
 .section-hero {
    background: var(--g-hero);
 }
@@ -48,8 +49,6 @@
    flex-wrap: wrap;
    gap: 8px;
 }
-
-/* 오른쪽 카드 */
 
 .hero-right {
    display: flex;
@@ -103,8 +102,7 @@
    background: var(--accent-soft);
 }
 
-/* ============= ABOUT ============= */
-
+/* ============= ABOUT (앨범형 16:4 카드) ============= */
 .section-about {
    background: var(--bg-soft);
 }
@@ -113,62 +111,46 @@
    padding: 40px 0;
 }
 
-.about-layout {
-   display: grid;
-   grid-template-columns: 220px minmax(0, 1fr);
-   gap: 32px;
-   align-items: center;
-}
-
-.about-photo {
-   display: flex;
-   justify-content: center;
-}
-
-.photo-placeholder {
-   width: 170px;
-   height: 170px;
-   border-radius: 26px;
-   background: linear-gradient(135deg, var(--accent), #ff8ed2);
-   color: #1b1220;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   font-weight: 800;
-   font-size: 32px;
-   box-shadow: var(--shadow-strong);
-}
-
-.profile-img {
+.about-album {
    width: 100%;
-   height: 100%;
-   object-fit: cover;
-   border-radius: inherit;
-   display: block;
+   display: flex;
+   justify-content: center;
 }
 
-.about-card {
-   background: var(--surface);
-   border-radius: var(--radius-lg);
+.about-card-wide {
+   width: min(980px, 100%);
+   aspect-ratio: 16 / 4;
+   border-radius: var(--radius-xl);
    border: 1px solid var(--border-subtle);
-   box-shadow: var(--shadow-soft);
-   padding: 24px 26px;
+   background: color-mix(in oklab, var(--surface) 92%, transparent);
+   box-shadow: var(--shadow-strong);
+   overflow: hidden;
+   display: grid;
+   grid-template-columns: 1.35fr 0.65fr;
 }
 
-.about-card h3 {
-   margin: 0 0 6px;
+.about-card-main {
+   padding: 22px 26px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.about-title {
+   margin: 0 0 8px;
    font-size: 20px;
+   color: var(--text);
 }
 
 .about-sub {
-   margin: 0 0 14px;
+   margin: 0 0 12px;
    color: var(--accent);
    font-size: 14px;
    font-weight: 600;
 }
 
 .about-body {
-   margin: 0 0 16px;
+   margin: 0 0 14px;
    font-size: 14px;
    color: var(--text-sub);
    line-height: 1.7;
@@ -178,7 +160,6 @@
    display: flex;
    flex-wrap: wrap;
    gap: 8px;
-   margin-bottom: 10px;
 }
 
 .about-badges span {
@@ -187,16 +168,45 @@
    border-radius: 999px;
    border: 1px solid var(--border-subtle);
    background: var(--surface-soft);
-}
-
-.about-notes p {
-   margin: 2px 0;
-   font-size: 12px;
    color: var(--text-sub);
 }
 
-/* ============= SKILLS ============= */
+.about-card-side {
+   padding: 22px 18px;
+   border-left: 1px solid var(--border-subtle);
+   background: color-mix(in oklab, var(--accent-soft) 28%, var(--surface) 72%);
+   display: flex;
+   align-items: center;
+}
 
+.about-notes p {
+   margin: 6px 0;
+   font-size: 12px;
+   color: var(--text-sub);
+   line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+   .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 26px;
+   }
+   .hero-right {
+      order: -1;
+   }
+
+   .about-card-wide {
+      aspect-ratio: auto;
+      grid-template-columns: 1fr;
+   }
+
+   .about-card-side {
+      border-left: 0;
+      border-top: 1px solid var(--border-subtle);
+   }
+}
+
+/* ============= SKILLS ============= */
 .section-skills {
    background: var(--bg);
 }
@@ -228,14 +238,11 @@
    box-shadow: var(--shadow-strong);
 }
 
-/* 클릭 가능한 스킬 카드 */
 .skill-card-button {
    cursor: pointer;
    text-align: left;
    background: var(--surface);
 }
-
-/* 스킬 상단 (아이콘 + 타이틀) */
 
 .skill-top {
    display: flex;
@@ -279,8 +286,7 @@
    color: var(--text);
 }
 
-/* ===== SKILL MODAL ===== */
-
+/* SKILL MODAL */
 .skill-modal-backdrop {
    position: fixed;
    inset: 0;
@@ -347,20 +353,21 @@
    color: var(--text-sub);
 }
 
-/* ============= PROJECTS (GRID, LOGO 중심) ============= */
-
+/* ============= PROJECTS (✅ 3열 + 작게 + 가운데 촘촘) ============= */
 .section-projects {
    background: var(--bg-soft);
 }
 
 .projects-inner {
-   padding: 40px 0 60px;
+   padding: 34px 0 90px; /* ✅ 아래 여백 늘려서 잘림 방지 */
 }
 
 .projects-grid {
+   width: min(860px, 100%); /* ✅ 그리드 덩어리로 중앙 모이게 */
+   margin: 0 auto;
    display: grid;
-   grid-template-columns: repeat(2, minmax(0, 1fr));
-   gap: 20px;
+   grid-template-columns: repeat(3, minmax(0, 1fr)); /* ✅ 3열 유지 */
+   gap: 12px; /* ✅ 촘촘 */
 }
 
 .project-card {
@@ -370,32 +377,33 @@
    cursor: pointer;
 }
 
-/* 로고/심볼 카드 */
-
 .project-logo-card {
-   border-radius: 18px;
+   border-radius: 14px;
    border: 1px solid var(--border-subtle);
-   background: var(--surface);
+   background: color-mix(in oklab, var(--surface) 92%, transparent);
    box-shadow: var(--shadow-soft);
-   padding: 16px 16px 14px;
+
+   padding: 10px 10px 9px; /* ✅ 작게 */
    display: flex;
    flex-direction: column;
    align-items: stretch;
-   gap: 10px;
+   gap: 8px;
    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
 
 .project-card:hover .project-logo-card {
-   transform: translateY(-3px);
+   transform: translateY(-2px); /* ✅ 덜 튀게 */
    border-color: var(--border-strong);
    box-shadow: var(--shadow-strong);
 }
 
+/* ✅ 카드가 커지던 원인: 썸네일 박스 높이 확 줄이기 */
 .project-logo-big-wrap {
    width: 100%;
-   aspect-ratio: 16 / 9;
-   border-radius: 14px;
-   background: var(--surface-soft);
+   aspect-ratio: 2.6 / 1; /* ✅ 얇게 */
+   max-height: 120px; /* ✅ 화면 커도 제한 */
+   border-radius: 12px;
+   background: color-mix(in oklab, var(--surface-soft) 86%, transparent);
    display: flex;
    align-items: center;
    justify-content: center;
@@ -403,8 +411,8 @@
 }
 
 .project-logo-big {
-   width: 70%;
-   height: 70%;
+   width: 52%;
+   height: 52%;
    object-fit: contain;
    display: block;
    opacity: 0.96;
@@ -413,24 +421,23 @@
 .project-logo-meta {
    display: flex;
    flex-direction: column;
-   gap: 3px;
+   gap: 2px;
 }
 
 .project-label {
-   font-size: 11px;
-   letter-spacing: 0.12em;
+   font-size: 10px;
+   letter-spacing: 0.11em;
    text-transform: uppercase;
    color: var(--text-sub);
 }
 
 .project-logo-title {
-   font-size: 13px;
+   font-size: 12px;
    color: var(--text);
-   font-weight: 500;
+   font-weight: 600;
 }
 
-/* ===== PROJECT MODAL ===== */
-
+/* PROJECT MODAL */
 .project-modal-backdrop {
    position: fixed;
    inset: 0;
@@ -509,6 +516,7 @@
    border: 1px solid var(--border-subtle);
    background: var(--surface-soft);
 }
+
 .project-modal-block {
    margin-top: 12px;
 }
@@ -532,8 +540,6 @@
 .project-modal-list li {
    margin: 4px 0;
 }
-
-/* 메인 화면 작은 썸네일 */
 
 .project-modal-thumb-small-wrap {
    margin: 4px 0 12px;
@@ -572,7 +578,6 @@
 }
 
 /* ============= CONTACT ============= */
-
 .section-contact {
    background: var(--bg);
 }
@@ -615,32 +620,10 @@
    cursor: pointer;
 }
 
-/* ============= RESPONSIVE ============= */
-
 @media (max-width: 900px) {
-   .hero-inner {
-      grid-template-columns: 1fr;
-      gap: 26px;
-   }
-
-   .hero-right {
-      order: -1;
-   }
-
-   .about-layout {
-      grid-template-columns: 1fr;
-   }
-
-   .skills-grid-main {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-   }
-
-   .skills-grid-sub {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-   }
-
    .projects-grid {
-      grid-template-columns: 1fr;
+      width: min(760px, 100%);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
    }
 }
 
@@ -656,5 +639,9 @@
    .hero-actions {
       flex-direction: column;
       align-items: flex-start;
+   }
+
+   .projects-grid {
+      grid-template-columns: 1fr;
    }
 }

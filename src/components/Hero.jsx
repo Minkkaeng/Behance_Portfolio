@@ -1,4 +1,5 @@
-// src/components/Hero.jsx
+import React from 'react';
+
 function Hero() {
    return (
       <div className="hero-inner">
